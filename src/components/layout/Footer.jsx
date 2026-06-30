@@ -23,8 +23,8 @@ export default function Footer() {
             {/* Socials */}
             <div className="flex items-center gap-2.5">
               {[
-                { label: 'Instagram', href: '#', icon: IcoInsta },
-                { label: 'LinkedIn',  href: '#', icon: IcoLinkedin },
+                { label: 'Instagram', href: 'https://www.instagram.com/veganvista_corp?igsh=Nnc2M3FxZDY0MHJs', icon: IcoInsta },
+                { label: 'LinkedIn',  href: 'https://www.linkedin.com/in/veganvista-corp-private-limited/', icon: IcoLinkedin },
                 { label: 'Facebook',  href: '#', icon: IcoFacebook },
                 { label: 'YouTube',   href: '#', icon: IcoYoutube },
               ].map(({ label, href, icon: Icon }) => (

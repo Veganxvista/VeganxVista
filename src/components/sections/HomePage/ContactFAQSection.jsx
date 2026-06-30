@@ -6,6 +6,14 @@ import { ArrowRight, ChevronLeft, ChevronRight, Circle, Leaf } from 'lucide-reac
 
 const FAQ_ITEMS = [
   {
+    q: 'Is Veganvista Certified ?',
+    a: "Yes, Veganvista is ISO certified, Vegan certified, PETA aproved, USDA Biopreffered and also USDA Organic certified\nAll these certifications makes Veganvista Bioleather more authentic and trustworthy"
+  },
+  {
+    q: 'In what thickness and sizes are Eori® Vegan Leather sheets available?',
+    a: 'Veganvista Bio Leather is available in thickness ranging from 0.6mm to 1.3mm.Veganvista  sampling sheets are available in A5 sizes sheet, while commercial sheets will be available in 54 inches role in width.\nVeganvista’s Cactus leather  is offered in a wide range of colors and textures, providing endless possibilities. Additionally, we offer customization in color.'
+  },
+  {
     q: 'What is the minimum order quantity?',
     a: 'We accept orders from 50 metres for standard colors. Custom colors have a 200m MOQ.'
   },
@@ -70,8 +78,8 @@ I want to know more about your plant-based leather.
         <div className="grid lg:grid-cols-2 gap-6">
 
           {/* LEFT */}
-          <div className="bg-[#D8D8D8] rounded-2xl p-5">
-            <div className="bg-[#00A65A] rounded-2xl p-8 min-h-[340px]">
+          <div className="bg-[#D8D8D8] h-fit rounded-2xl p-5">
+            <div className="bg-[#00A65A] rounded-2xl p-8 max-h-[340px]">
               <h2 className="text-white text-3xl font-medium mb-16">
                 Reach Out
               </h2>
