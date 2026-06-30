@@ -10,7 +10,7 @@ export default function RecognitionSection() {
   const recognitions = [
     {
       id: 1,
-      image: "/assets/recognition/news1.png",
+      image: "/assets/Hero/Recognitions1.png",
     },
   ];
 
@@ -51,7 +51,7 @@ export default function RecognitionSection() {
 
         {/* Cards */}
         {activeTab === "recognitions" && (
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid  grid-cols-1 md:grid-cols-2 gap-8">
             {recognitions.map((item) => (
               <div
                 key={item.id}
@@ -60,7 +60,7 @@ export default function RecognitionSection() {
                 <img
                   src={item.image}
                   alt="Recognition"
-                  className="w-[80px] object-contain shadow-md"
+                  className="w-full h-full p-2 object-contain shadow-md"
                 />
               </div>
             ))}

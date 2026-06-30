@@ -1,11 +1,5 @@
-/**
- * Order.jsx  (previously "Products")
- * Matches Figma Screen 1 — hero "Diverse range of premium leathers",
- * Quote CTA, product grid, swatch CTAs.
- */
-
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Filter, ArrowRight } from 'lucide-react';
 import QuoteModal from '../components/ui/QuoteModal';
@@ -22,6 +16,18 @@ export default function Order() {
   const [activeCategory, setActiveCategory] = useState('all');
   const [quoteOpen, setQuoteOpen] = useState(false);
   const filtered = getProductsByCategory(activeCategory);
+
+  const navigate = useNavigate();
+
+const goToContact = () => {
+  navigate("/");
+
+  setTimeout(() => {
+    document.getElementById("contact")?.scrollIntoView({
+      behavior: "smooth",
+    });
+  }, 100);
+};
 
   return (
     <>
@@ -89,11 +95,12 @@ export default function Order() {
       </div>
 
       <Link
-        to="/contact"
+        to="/#contact"
         id="order-lets-connect"
         className="inline-flex items-center gap-2 bg-[#00311E] text-white font-gilroy font-semibold
                    text-lg px-6 py-3 rounded-full hover:bg-[#7DC44E]
                    transition-all duration-200 flex-shrink-0"
+        onClick={goToContact}
       >
         Let's Connect
       </Link>

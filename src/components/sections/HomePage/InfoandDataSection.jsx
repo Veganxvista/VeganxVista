@@ -1,17 +1,51 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import { motion, useInView } from 'framer-motion';
 import { ArrowRight, ChevronLeft, ChevronRight, Circle, Leaf } from 'lucide-react';
 import { PRODUCTS } from '../../../data/products.js';
 
+function Counter({ end }) {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    if (!isInView) return;
+
+    let current = 0;
+    const duration = 1000; // 1 sec
+    const steps = 40;
+    const increment = end / steps;
+    const interval = duration / steps;
+
+    const timer = setInterval(() => {
+      current += increment;
+
+      if (current >= end) {
+        setCount(end);
+        clearInterval(timer);
+      } else {
+        setCount(Math.floor(current));
+      }
+    }, interval);
+
+    return () => clearInterval(timer);
+  }, [isInView, end]);
+
+  return (
+    <div ref={ref}>
+      {end === 0 ? "00%" : `${count}%`}
+    </div>
+  );
+}
 
 export default function CactusInfoSection() {
   const stats = [
-    { value: "87%", label: "Less CO₂ Emissions" },
-    { value: "72%", label: "Less Water Usage" },
-    { value: "90%", label: "Bio-Based Material" },
-    { value: "00%", label: "Toxic Chemicals" },
-  ];
+  { value: 87, label: "Less CO₂ Emissions" },
+  { value: 72, label: "Less Water Usage" },
+  { value: 90, label: "Bio-Based Material" },
+  { value: 0, label: "Toxic Chemicals" },
+];
 
   return (
     <section className="bg-[#EDFFE5] min-h-screen py-28 px-6 overflow-hidden">
@@ -57,8 +91,8 @@ export default function CactusInfoSection() {
               {stats.map((item, idx) => (
                 <div key={idx} className="text-center">
                   <h3 className="text-[#00A65A] font-inter font-bold text-5xl">
-                    {item.value}
-                  </h3>
+  <Counter end={item.value} />
+</h3>
                   <p className="text-sm font-medium text-[#1B3A2D]/70 mt-2">
                     {item.label}
                   </p>

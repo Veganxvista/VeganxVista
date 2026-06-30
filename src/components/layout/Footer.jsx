@@ -6,56 +6,6 @@ export default function Footer() {
   return (
     <footer className="bg-[#1B3A2D] text-white" aria-label="Site footer">
 
-      {/* ── SWATCH CTA ROW — matching Figma ── */}
-      {/* <div className="border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-5 grid grid-cols-1 md:grid-cols-2"> */}
-          {/* Download Pdf */}
-          {/* <div className="py-14 md:pr-12 md:border-r border-b md:border-b-0 border-white/10 flex flex-col gap-3">
-            <h3 className="font-gilroy font-black text-white text-2xl md:text-3xl leading-snug">
-              Download Our<br />
-              <span className="text-white">Swatch Card</span>
-            </h3>
-            <p className="font-inter text-white/50 text-sm leading-relaxed max-w-xs">
-              View all colors, textures and thickness options in our full catalogue PDF
-            </p>
-            <div className="mt-4">
-              <a
-                href="/assets/veganvista-catalogue.pdf"
-                download
-                id="footer-download-pdf"
-                className="inline-flex items-center gap-2 border border-white/30 text-white font-inter
-                           font-medium text-sm px-5 py-2.5 rounded-full hover:bg-white/10
-                           transition-all duration-200"
-              >
-                Download Pdf
-              </a>
-            </div>
-          </div> */}
-
-          {/* Buy Physical */}
-          {/* <div className="py-14 md:pl-12 flex flex-col gap-3">
-            <h3 className="font-gilroy font-black text-white text-2xl md:text-3xl leading-snug">
-              Buy a Physical<br />
-              <span className="text-white">Swatch Card</span>
-            </h3>
-            <p className="font-inter text-white/50 text-sm leading-relaxed max-w-xs">
-              Hold the real thing — A5 sample sheets in all available colors
-            </p>
-            <div className="mt-4">
-              <Link
-                to="/contact"
-                id="footer-place-order"
-                className="inline-flex items-center gap-2 border border-white/30 text-white font-inter
-                           font-medium text-sm px-5 py-2.5 rounded-full hover:bg-white/10
-                           transition-all duration-200"
-              >
-                Place an order
-              </Link>
-            </div> */}
-          {/* </div>
-        </div>
-      </div> */}
-
       {/* ── MAIN FOOTER GRID ── */}
       <div className="max-w-7xl mx-auto px-5 py-10">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
@@ -124,9 +74,9 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="mailto:info@veganvista.in" className="flex items-center gap-2 text-white/50 text-sm font-inter hover:text-[#7DC44E] transition-colors">
+                <a href="mailto:veganvistacorp@gmail.com" className="flex items-center gap-2 text-white/50 text-sm font-inter hover:text-[#7DC44E] transition-colors">
                   <Mail size={13} />
-                  info@veganvista.in
+                  veganvistacorp@gmail.com
                 </a>
               </li>
               <li className="flex items-start gap-2 text-white/50 text-sm font-inter">
