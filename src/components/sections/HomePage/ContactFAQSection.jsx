@@ -33,6 +33,37 @@ export default function ContactFAQSection() {
     setSent(true);
   };
 
+  // for form submission to WhatsApp
+  const handleformWhatsApp = () => {
+    if (!form.name.trim() || !form.email.trim()) {
+      alert("Please fill Name and Email first");
+      return;
+    }
+
+    const phone = import.meta.env.VITE_FOUNDER_CONTACT; // user number
+
+    const message = `
+Hello VeganVista,
+
+Name: ${form.name}
+Email: ${form.email}
+
+I want to know more about your plant-based leather.
+  `;
+
+    const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+    window.open(url, "_blank");
+  };
+
+  //for direct WhatsApp button
+  const handleWhatsApp = () => {
+    const phone = import.meta.env.VITE_FOUNDER_CONTACT; // number with country code
+    const message = "Hello, I am interested in your plant-based leather products.";
+
+    const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+    window.open(url, "_blank");
+  };
+
   return (
     <section className="bg-[#E5F0DC] py-20" id="contact">
       <div className="max-w-7xl mx-auto px-6">
@@ -48,17 +79,28 @@ export default function ContactFAQSection() {
               <form className="space-y-8 text-center">
                 <input
                   placeholder="Name"
+                  value={form.name}
+                  onChange={(e) =>
+                    setForm({ ...form, name: e.target.value })
+                  }
                   className="w-full bg-transparent border-b border-white/40
                          pb-3 text-white placeholder-white/70 outline-none"
                 />
 
                 <input
                   placeholder="Email"
+                  type="email"
+                  value={form.email}
+                  onChange={(e) =>
+                    setForm({ ...form, email: e.target.value })
+                  }
                   className="w-full bg-transparent border-b border-white/40
                          pb-3 text-white placeholder-white/70 outline-none"
                 />
 
                 <button
+                  type="button"
+                  onClick={handleformWhatsApp}
                   className="mt-8 px-8 py-2 rounded-full bg-[#043228]
                          text-white text-sm "
                 >
@@ -69,7 +111,10 @@ export default function ContactFAQSection() {
 
             <div className="text-center mt-5">
               <p className="text-sm">OR</p>
-              <button className="underline text-[#00A65A]">
+              <button
+                onClick={handleWhatsApp}
+                className="underline text-[#00A65A] hover:text-[#008A4C] transition-colors"
+              >
                 Continue to Whatsapp
               </button>
             </div>

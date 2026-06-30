@@ -18,7 +18,7 @@ const FOUNDERS = [
   {
     name:  'Ishita Agrawal',
     title: 'CEO & Co-Founder',
-    image: '/assets/Hero/IshitaAgrawal.jpg',
+    image: '/assets/Hero/IshitaAgrawal.jpeg',
     color: '#2F7A1E',
   },
   {

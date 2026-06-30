@@ -120,7 +120,8 @@ const goToContact = () => {
                 </p>
                 <a
                   href="/assets/VV_Catalog.pdf"
-                  download
+                  target="_blank"
+  rel="noopener noreferrer"
                   id="order-download-pdf"
                   className="inline-flex items-center gap-2 border-2 border-[#1B3A2D] text-[#1B3A2D] font-gilroy
                              font-semibold text-sm px-6 py-3 rounded-full hover:bg-[#1B3A2D] hover:text-white
