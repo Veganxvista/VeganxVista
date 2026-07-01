@@ -146,7 +146,7 @@ export default function About() {
 
       {/* ── THE PEOPLE BEHIND IT ── */}
       <section
-        className="relative min-h-[70vh] flex flex-col items-center justify-center overflow-hidden"
+        className="relative min-h-[70vh] flex flex-col items-center justify-start overflow-hidden"
         style={{ background: '#0e1e15' }}
         aria-label="Team"
       >
@@ -158,15 +158,15 @@ export default function About() {
             className="w-full h-full object-cover "
             onError={(e) => { e.currentTarget.style.display = 'none'; }}
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0e1e15]/80 to-[#07532866]" />
+          <div className="absolute inset-0 " />
         </div>
 
         {/* Text overlay */}
-        <motion.div {...fadeUp(0)} className="relative z-10 text-center px-5 py-20">
-          <h2 className="font-gilroy font-semibold text-white/80 text-3xl md:text-5xl">
+        <motion.div {...fadeUp(0)} className="relative  z-10 text-center py-1 px-5 ">
+          <h2 className="font-gilroy font-semibold text-white/80 text-3xl md:text-4xl">
             The People Behind It
           </h2>
-          <p className="font-inter text-white/50 text-base mt-4 max-w-sm mx-auto">
+          <p className="font-inter text-black/70 text-base mt-4 max-w-sm mx-auto">
             A team united by one mission - redefining what luxury means.
           </p>
         </motion.div>
