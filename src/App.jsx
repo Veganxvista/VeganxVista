@@ -1,7 +1,3 @@
-/**
- * App.jsx — Router with correct routes matching Figma nav: / | /about | /blog | /order
- */
-
 import React, { useEffect } from 'react';
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 
@@ -10,9 +6,9 @@ import Footer        from './components/layout/Footer';
 
 import Home          from './pages/Home';
 import Order         from './pages/Order';
-import ProductDetail from './pages/ProductDetail';
+// import ProductDetail from './pages/ProductDetail';
 import About         from './pages/About';
-import Contact       from './pages/Contact';
+// import Contact       from './pages/Contact';
 import Blog          from './pages/Blog';
 import NotFound      from './pages/NotFound';
 
@@ -42,11 +38,11 @@ export default function App() {
         <Route path="/blog"          element={<Layout><Blog /></Layout>} />
         <Route path="/blog/:slug"    element={<Layout><Blog /></Layout>} />
         <Route path="/order"         element={<Layout><Order /></Layout>} />
-        <Route path="/order/:slug"   element={<Layout><ProductDetail /></Layout>} />
+        {/* <Route path="/order/:slug"   element={<Layout><ProductDetail /></Layout>} />  */}
         {/* Legacy /products redirect */}
-        <Route path="/products"      element={<Layout><Order /></Layout>} />
+        {/* <Route path="/products"      element={<Layout><Order /></Layout>} />
         <Route path="/products/:slug" element={<Layout><ProductDetail /></Layout>} />
-        {/* <Route path="/contact"       element={<Layout><Contact /></Layout>} /> */}
+        <Route path="/contact"       element={<Layout><Contact /></Layout>} /> */}
         <Route path="*"              element={<NotFound />} />
       </Routes>
     </BrowserRouter>
