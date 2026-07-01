@@ -33,7 +33,7 @@ const FAQ_ITEMS = [
 
 export default function ContactFAQSection() {
   const [open, setOpen] = useState(null);
-  const [form, setForm] = useState({ name: '', email: '', message: '' });
+  const [form, setForm] = useState({ name: '', email: '', phnno: '', message: '' });
   const [sent, setSent] = useState(false);
 
   const handleSubmit = (e) => {
@@ -51,14 +51,14 @@ export default function ContactFAQSection() {
     const phone = import.meta.env.VITE_FOUNDER_CONTACT; // user number
 
     const message = `
-Hello VeganVista,
+  Hello VeganVista,
 
-Name: ${form.name}
-Email: ${form.email}
-
-I want to know more about your plant-based leather.
+  Name: ${form.name}
+  Email: ${form.email}
+  PhnNo: ${form.phnno}
+  Message: ${form.message || "I want to know more about your plant-based leather."}
+  Thank you!
   `;
-
     const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
     window.open(url, "_blank");
   };
@@ -79,7 +79,7 @@ I want to know more about your plant-based leather.
 
           {/* LEFT */}
           <div className="bg-[#D8D8D8] h-fit rounded-2xl p-5">
-            <div className="bg-[#00A65A] rounded-2xl p-8 max-h-[340px]">
+            <div className="bg-[#00A65A] rounded-2xl p-8 h-fit">
               <h2 className="text-white text-3xl font-medium mb-16">
                 Reach Out
               </h2>
@@ -101,6 +101,25 @@ I want to know more about your plant-based leather.
                   value={form.email}
                   onChange={(e) =>
                     setForm({ ...form, email: e.target.value })
+                  }
+                  className="w-full bg-transparent border-b border-white/40
+                         pb-3 text-white placeholder-white/70 outline-none"
+                />
+                <input
+                  placeholder="Phone Number"
+                  type="tel"
+                  value={form.phnno}
+                  onChange={(e) =>
+                    setForm({ ...form, phnno: e.target.value })
+                  }
+                  className="w-full bg-transparent border-b border-white/40
+                         pb-3 text-white placeholder-white/70 outline-none"
+                />
+                <textarea
+                  placeholder="Message"
+                  value={form.message}
+                  onChange={(e) =>
+                    setForm({ ...form, message: e.target.value })
                   }
                   className="w-full bg-transparent border-b border-white/40
                          pb-3 text-white placeholder-white/70 outline-none"

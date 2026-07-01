@@ -12,6 +12,18 @@ export default function RecognitionSection() {
       id: 1,
       image: "/assets/Hero/Recognitions1.png",
     },
+    {
+      id: 2,
+      image: "/assets/Hero/paper-2.jpg",
+    },
+    {
+      id: 3,
+      image: "/assets/Hero/paper-3.jpg",
+    },
+    {
+      id: 4,
+      image: "/assets/Hero/AGRAAWARD.jpeg",
+    },
   ];
 
   return (
@@ -51,7 +63,7 @@ export default function RecognitionSection() {
 
         {/* Cards */}
         {activeTab === "recognitions" && (
-          <div className="grid  grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid  grid-cols-1 md:grid-cols-4 gap-8">
             {recognitions.map((item) => (
               <div
                 key={item.id}
