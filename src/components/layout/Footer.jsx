@@ -8,16 +8,13 @@ export default function Footer() {
 
       {/* ── MAIN FOOTER GRID ── */}
       <div className="max-w-7xl mx-auto px-5 py-10">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-12">
 
           {/* Col 1 — Logo + socials + map */}
           <div className="flex flex-col items-center gap-5">
             {/* Logo */}
             <Link to="/" className="flex items-center gap-2" aria-label="VeganVista">
-              <img src="/assets/Logo/veganvista_logo1.png" alt="VeganVista" className="h-15 w-30" />
-              {/* <div className="leading-none">
-                <img src="/assets/Logo/veganvista_logo1.png" alt="VeganVista" className="h-19 w-30" />
-              </div> */}
+              <img src="/assets/Logo/veganvista_logo1.png" alt="VeganVista" className="md:h-15 md:w-30" />
             </Link>
 
             {/* Socials */}
@@ -58,8 +55,8 @@ export default function Footer() {
           </div>
 
           {/* Col 2 — Contact */}
-          <div>
-            <h4 className="font-inter font-semibold text-white/90 text-sm mb-5">Contact</h4>
+          <div className=" flex flex-col ">
+            <h4 className="font-inter font-semibold text-white/90 text-sm md:mb-5">Contact</h4>
             <ul className="space-y-3">
               <li>
                 <a href="tel:+919824006823" className="flex items-center gap-2 text-white/50 text-sm font-inter hover:text-[#7DC44E] transition-colors">
@@ -74,9 +71,9 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="mailto:veganvistacorp@gmail.com" className="flex items-center gap-2 text-white/50 text-sm font-inter hover:text-[#7DC44E] transition-colors">
+                <a href="mailto:anand@veganvistacorp.com" className="flex items-center gap-2 text-white/50 text-sm font-inter hover:text-[#7DC44E] transition-colors">
                   <Mail size={13} />
-                  veganvistacorp@gmail.com
+                  anand@veganvistacorp.com
                 </a>
               </li>
               <li className="flex items-start gap-2 text-white/50 text-sm font-inter">

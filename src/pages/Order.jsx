@@ -33,7 +33,7 @@ const goToContact = () => {
       <main className="" aria-label="Order - Product Range">
 
         <section
-  className="relative min-h-[100vh] overflow-hidden rounded-b-[40px] md:rounded-b-[60px] bg-[#00311E]"
+  className="relative h-[70vh] md:min-h-[100vh] overflow-hidden rounded-b-[40px] md:rounded-b-[60px] bg-[#00311E]"
   aria-label="Order hero"
 >
   {/* Background image */}
@@ -42,7 +42,7 @@ const goToContact = () => {
       src="assets/Hero/order-page-bg.png"
       alt=""
       aria-hidden="true"
-      className="w-full object-contain opacity-30 rotate-[-15deg] scale-[1.25] relative top-[-60px]"
+      className="w-full object-contain opacity-30 rotate-45 md:rotate-[-15deg] scale-[4] md:scale-[1.25] relative top-[-60px]"
       onError={(e) => {
         e.currentTarget.style.display = "none";
       }}
@@ -136,11 +136,12 @@ const goToContact = () => {
                   Hold the real thing — A5 sample sheets in all available colors.
                 </p>
                 <Link
-                  to="/contact"
+                  to="/#contact"
                   id="order-physical-swatch"
                   className="inline-flex items-center gap-2 border-2 border-[#00311E] text-[#1B3A2D] font-inter
                              font-semibold text-sm px-6 py-3 rounded-full hover:bg-[#1B3A2D] hover:text-white
                              transition-all duration-200"
+                  onClick={goToContact}
                 >
                   Place an order
                 </Link>
@@ -155,79 +156,79 @@ const goToContact = () => {
 }
 
 /* ── Inline Product Card (matches Figma card style) ── */
-function ProductCard({ product, index, onQuote }) {
-  const [imgErr, setImgErr] = useState(false);
+// function ProductCard({ product, index, onQuote }) {
+//   const [imgErr, setImgErr] = useState(false);
 
-  return (
-    <motion.article
-      initial={{ opacity: 0, y: 24 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: '-40px' }}
-      transition={{ duration: 0.5, delay: index * 0.08 }}
-      className="bg-white rounded-3xl overflow-hidden group hover:-translate-y-1 transition-all duration-300 shadow-sm hover:shadow-xl"
-    >
-      {/* Image */}
-      <div className="aspect-[4/3] bg-[#EFF8E8] overflow-hidden relative">
-        {!imgErr ? (
-          <img
-            src={product.image}
-            alt={product.name}
-            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-            onError={() => setImgErr(true)}
-            loading="lazy"
-          />
-        ) : (
-          <div
-            className="w-full h-full flex items-center justify-center"
-            style={{ background: `linear-gradient(135deg, ${product.colorHex}33, ${product.colorHex}66)` }}
-          >
-            <div className="w-16 h-16 rounded-full" style={{ backgroundColor: product.colorHex, opacity: 0.6 }} />
-          </div>
-        )}
-        {product.badge && (
-          <span className="absolute top-3 left-3 bg-[#7DC44E] text-white text-xs font-inter font-semibold px-3 py-1 rounded-full">
-            {product.badge}
-          </span>
-        )}
-        <div className="absolute bottom-3 right-3 flex items-center gap-1.5 bg-white/90 backdrop-blur-sm px-2.5 py-1 rounded-full shadow-sm">
-          <div className="w-3 h-3 rounded-full border border-white" style={{ backgroundColor: product.colorHex }} />
-          <span className="text-xs font-inter font-medium text-[#1B3A2D]">{product.color}</span>
-        </div>
-      </div>
+//   return (
+//     <motion.article
+//       initial={{ opacity: 0, y: 24 }}
+//       whileInView={{ opacity: 1, y: 0 }}
+//       viewport={{ once: true, margin: '-40px' }}
+//       transition={{ duration: 0.5, delay: index * 0.08 }}
+//       className="bg-white rounded-3xl overflow-hidden group hover:-translate-y-1 transition-all duration-300 shadow-sm hover:shadow-xl"
+//     >
+//       {/* Image */}
+//       <div className="aspect-[4/3] bg-[#EFF8E8] overflow-hidden relative">
+//         {!imgErr ? (
+//           <img
+//             src={product.image}
+//             alt={product.name}
+//             className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+//             onError={() => setImgErr(true)}
+//             loading="lazy"
+//           />
+//         ) : (
+//           <div
+//             className="w-full h-full flex items-center justify-center"
+//             style={{ background: `linear-gradient(135deg, ${product.colorHex}33, ${product.colorHex}66)` }}
+//           >
+//             <div className="w-16 h-16 rounded-full" style={{ backgroundColor: product.colorHex, opacity: 0.6 }} />
+//           </div>
+//         )}
+//         {product.badge && (
+//           <span className="absolute top-3 left-3 bg-[#7DC44E] text-white text-xs font-inter font-semibold px-3 py-1 rounded-full">
+//             {product.badge}
+//           </span>
+//         )}
+//         <div className="absolute bottom-3 right-3 flex items-center gap-1.5 bg-white/90 backdrop-blur-sm px-2.5 py-1 rounded-full shadow-sm">
+//           <div className="w-3 h-3 rounded-full border border-white" style={{ backgroundColor: product.colorHex }} />
+//           <span className="text-xs font-inter font-medium text-[#1B3A2D]">{product.color}</span>
+//         </div>
+//       </div>
 
-      {/* Content */}
-      <div className="p-6">
-        <h3 className="font-gilroy font-bold text-[#1B3A2D] text-lg mb-1 leading-snug">{product.name}</h3>
-        <p className="font-inter text-[#1B3A2D]/50 text-sm leading-relaxed mb-3 line-clamp-2">{product.shortDesc}</p>
+//       {/* Content */}
+//       <div className="p-6">
+//         <h3 className="font-gilroy font-bold text-[#1B3A2D] text-lg mb-1 leading-snug">{product.name}</h3>
+//         <p className="font-inter text-[#1B3A2D]/50 text-sm leading-relaxed mb-3 line-clamp-2">{product.shortDesc}</p>
 
-        {/* Quick specs */}
-        <div className="flex flex-wrap gap-1.5 mb-4">
-          {[product.specs.thickness, product.specs.width].map((s) => (
-            <span key={s} className="text-xs font-inter text-[#1B3A2D]/60 bg-[#EFF8E8] px-2.5 py-1 rounded-full">
-              {s}
-            </span>
-          ))}
-        </div>
+//         {/* Quick specs */}
+//         <div className="flex flex-wrap gap-1.5 mb-4">
+//           {[product.specs.thickness, product.specs.width].map((s) => (
+//             <span key={s} className="text-xs font-inter text-[#1B3A2D]/60 bg-[#EFF8E8] px-2.5 py-1 rounded-full">
+//               {s}
+//             </span>
+//           ))}
+//         </div>
 
-        {/* CTAs */}
-        <div className="flex gap-2">
-          <Link
-            to={`/order/${product.slug}`}
-            id={`card-${product.id}`}
-            className="flex-1 text-center bg-[#1B3A2D] text-white font-inter font-semibold text-xs py-2.5 px-4
-                       rounded-full hover:bg-[#7DC44E] transition-all duration-200"
-          >
-            View Details
-          </Link>
-          <button
-            onClick={onQuote}
-            className="border border-[#1B3A2D]/20 text-[#1B3A2D] font-inter font-medium text-xs py-2.5 px-4
-                       rounded-full hover:border-[#7DC44E] hover:text-[#7DC44E] transition-all duration-200"
-          >
-            Quote
-          </button>
-        </div>
-      </div>
-    </motion.article>
-  );
-}
+//         {/* CTAs */}
+//         <div className="flex gap-2">
+//           <Link
+//             to={`/order/${product.slug}`}
+//             id={`card-${product.id}`}
+//             className="flex-1 text-center bg-[#1B3A2D] text-white font-inter font-semibold text-xs py-2.5 px-4
+//                        rounded-full hover:bg-[#7DC44E] transition-all duration-200"
+//           >
+//             View Details
+//           </Link>
+//           <button
+//             onClick={onQuote}
+//             className="border border-[#1B3A2D]/20 text-[#1B3A2D] font-inter font-medium text-xs py-2.5 px-4
+//                        rounded-full hover:border-[#7DC44E] hover:text-[#7DC44E] transition-all duration-200"
+//           >
+//             Quote
+//           </button>
+//         </div>
+//       </div>
+//     </motion.article>
+//   );
+// }

@@ -91,7 +91,9 @@ export default function Navbar() {
               className="fixed top-0 right-0 bottom-0 z-50 w-72 bg-[#0e1e15] shadow-2xl flex flex-col md:hidden"
             >
               <div className="flex items-center justify-between px-6 py-5 border-b border-white/10">
-                <LogoSVG />
+                <div className="leading-none">
+              <img src="/assets/Logo/veganvista_logo2.png" alt="VeganVista" className="h-10 w-11 absolute top-2 left-0" />
+            </div>
                 <button onClick={() => setMobileOpen(false)} className="text-white/60 hover:text-white" aria-label="Close">
                   <X size={20} />
                 </button>

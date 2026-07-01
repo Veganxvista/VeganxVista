@@ -14,7 +14,7 @@ const fadeUp = (delay = 0) => ({
 export default function HeroSection() {
   return (
     <section
-      className="relative min-h-[100vh] overflow-hidden bg-[#043228] rounded-b-[40px] md:rounded-b-[60px]"
+      className="relative h-[60vh] md:min-h-[100vh] overflow-hidden bg-[#043228] rounded-b-[40px] md:rounded-b-[60px]"
       aria-label="Hero"
     >
       {/* Background */}
@@ -34,7 +34,7 @@ export default function HeroSection() {
         <img
           src="/assets/Hero/hero-image.png"
           alt="Cactus leather"
-          className="w-[320px] md:w-[500px] lg:w-[600px] object-contain"
+          className="w-[320px]  md:w-[500px] lg:w-[600px] object-contain"
         />
       </div>
 
@@ -73,7 +73,7 @@ export default function HeroSection() {
       </motion.div>
 
       {/* Main Content */}
-      <div className="relative left-20 top-10 z-20 max-w-7xl mx-auto px-6 min-h-screen flex flex-col justify-end pb-16">
+      <div className="relative bottom-[-350px] md:left-20 md:bottom-[-400px] z-20 max-w-7xl mx-auto px-6  flex flex-col justify-end pb-16">
         {/* Heading */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}

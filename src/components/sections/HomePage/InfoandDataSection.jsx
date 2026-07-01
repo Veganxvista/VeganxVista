@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, useInView } from 'framer-motion';
-import { ArrowRight, ChevronLeft, ChevronRight, Circle, Leaf } from 'lucide-react';
+import { Asterisk, ArrowRight, ChevronLeft, ChevronRight, Circle, Leaf } from 'lucide-react';
 import { PRODUCTS } from '../../../data/products.js';
 
 function Counter({ end }) {
@@ -41,18 +41,18 @@ function Counter({ end }) {
 
 export default function CactusInfoSection() {
   const stats = [
-  { value: 87, label: "Less CO₂ Emissions" },
-  { value: 72, label: "Less Water Usage" },
-  { value: 90, label: "Bio-Based Material" },
-  { value: 0, label: "Toxic Chemicals" },
-];
+    { value: 87, label: "Less CO₂ Emissions" },
+    { value: 72, label: "Less Water Usage" },
+    { value: 90, label: "Bio-Based Material" },
+    { value: 0, label: "Toxic Chemicals" },
+  ];
 
   return (
     <section className="bg-[#EDFFE5] min-h-screen py-28 px-6 overflow-hidden">
       <div className="max-w-6xl mx-auto relative">
 
         {/* Main Card */}
-        <div className="relative border border-[#365948]/60 rounded-[32px] min-h-[480px] px-16 py-16">
+        <div className="relative border border-[#365948]/60 rounded-[32px] min-h-screen md:min-h-[480px] px-16 py-16">
 
           {/* Floating cactus image */}
           <div className="absolute -top-12 left-[-30px] rotate-[-5deg]">
@@ -67,11 +67,11 @@ export default function CactusInfoSection() {
 
           {/* Decorative star */}
           <div className="absolute top-8 right-8 text-[#00A65A] text-6xl font-extrabold rotate-[-10deg] font-gilroy">
-            ✳
+            <Asterisk size={80} color="#00A65A" />
           </div>
 
           {/* Content */}
-          <div className="max-w-2xl ml-80 pt-10  ">
+          <div className="relative md:max-w-2xl md:ml-80 mt-40 md:mt-0 md:pt-10  ">
             <p className="text-[#1B3A2D] text-xl leading-relaxed font-medium font-gilroy">
               To decouple the material economy from animal agriculture and
               petrochemicals. We exist to prove that the most durable and
@@ -85,15 +85,15 @@ export default function CactusInfoSection() {
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
-            className="absolute left-[-45px] bottom-10 w-[1250px] bg-white rounded-[20px] shadow-xl px-30 py-8 "
+            className="absolute left-0 md:left-[-45px] bottom-10 w-full md:w-[1250px] bg-white rounded-[20px] shadow-xl px-30 py-8 "
           >
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div className="grid grid-cols-2 md:grid-cols-4 md:gap-8">
               {stats.map((item, idx) => (
                 <div key={idx} className="text-center">
                   <h3 className="text-[#00A65A] font-inter font-bold text-5xl">
-  <Counter end={item.value} />
-</h3>
-                  <p className="text-sm font-medium text-[#1B3A2D]/70 mt-2">
+                    <Counter end={item.value} />
+                  </h3>
+                  <p className="text-sm font-medium text-[#1B3A2D]/70 md:mt-2">
                     {item.label}
                   </p>
                 </div>

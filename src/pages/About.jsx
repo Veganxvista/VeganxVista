@@ -11,13 +11,13 @@ const fadeUp = (delay = 0) => ({
 const FOUNDERS = [
   {
     name:  'Anand Agarwal',
-    title: 'Director & Founder',
+    title: 'Founder',
     image: '/assets/Hero/AnandAgrawal.jpg',
     color: '#1B3A2D',
   },
   {
     name:  'Ishita Agrawal',
-    title: 'CEO & Co-Founder',
+    title: 'Founder',
     image: '/assets/Hero/IshitaAgrawal.jpeg',
     color: '#2F7A1E',
   },
@@ -104,7 +104,7 @@ export default function About() {
       </div>
 
       {/* Static headings under cards */}
-      <div className="grid grid-cols-1 md:grid-cols-3 mt-8 text-center">
+      <div className="grid grid-cols-3 mt-8 text-center">
         <p className="font-gilroy text-sm tracking-[0.25em]  text-[#1B3A2D]/50">
           Purpose
         </p>
@@ -166,7 +166,7 @@ export default function About() {
           <h2 className="font-gilroy font-semibold text-white/80 text-3xl md:text-4xl">
             The People Behind It
           </h2>
-          <p className="font-inter text-black/70 text-base mt-4 max-w-sm mx-auto">
+          <p className="font-inter bg-white/60 text-black/70 text-base mt-4 max-w-sm mx-auto rounded-lg ">
             A team united by one mission - redefining what luxury means.
           </p>
         </motion.div>

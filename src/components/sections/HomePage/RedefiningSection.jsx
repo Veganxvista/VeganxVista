@@ -34,7 +34,7 @@ export default function RedefiningSection() {
 
           {/* Layered Process Images */}
           <div className="absolute inset-0 flex items-center justify-center z-10">
-            <div className="relative min-w-[1300px] h-full flex items-center justify-center">
+            <div className="relative min-w-[1000px] md:min-w-[1300px] h-full flex items-center justify-center">
               
               <img
                 src="/assets/Hero/cactus-layers.png"
@@ -46,7 +46,7 @@ export default function RedefiningSection() {
           </div>
 
           {/* Bottom Chip */}
-          <div className="absolute bottom-[175px] left-1/2 -translate-x-1/2 z-20 rotate-[-9deg] ">
+          <div className="absolute bottom-20 md:bottom-[175px]  left-1/2 -translate-x-1/2 z-20 md:rotate-[-9deg] ">
             <div className="bg-[#032B1F] font-gilroy text-[#8BFF59] px-7 py-3 rounded-full">
               From Cactus To Luxury Material
             </div>

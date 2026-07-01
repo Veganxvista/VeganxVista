@@ -5,6 +5,7 @@ import { ArrowRight, ChevronLeft, ChevronRight, Circle, Leaf } from 'lucide-reac
 import { PRODUCTS } from '../../../data/products.js';
 
 export default function LeatherCarousel() {
+  
   const [active, setActive] = useState(1);
   const total = PRODUCTS.length;
 
@@ -20,9 +21,10 @@ export default function LeatherCarousel() {
   const center = PRODUCTS[active];
   const right = PRODUCTS[(active + 1) % total];
 
+
   return (
     <section
-      className="min-h-screen py-20 px-6 bg-[linear-gradient(0deg,_rgba(217,217,217,0)_0%,_#C9FFAF_100%)]"
+      className="max-h-screen py-20 px-6 bg-[linear-gradient(0deg,_rgba(217,217,217,0)_0%,_#C9FFAF_100%)]"
     >
       <div className="w-full mx-auto">
         {/* Title */}
@@ -31,7 +33,6 @@ export default function LeatherCarousel() {
         text-[#1B3A2D]">
           explore range of leathers
         </p>
-
         <div className="relative flex items-center justify-between gap-10">
           
           {/* Left Preview */}
@@ -44,7 +45,7 @@ export default function LeatherCarousel() {
           </div>
 
           {/* Center Card */}
-          <div className="relative w-[800px] h-[500px] rounded-2xl overflow-hidden shadow-lg">
+          <div className="relative w-[800px] h-[400px] md:h-[500px] rounded-2xl overflow-hidden shadow-lg">
             <img
               src={center.image}
               className="w-full h-full object-cover"
@@ -56,13 +57,17 @@ export default function LeatherCarousel() {
               {center.name}
             </div>
 
-            <div className="absolute bottom-4 left-4 text-white text-sm">
+            <div className="absolute bottom-16 md:bottom-4 left-4 text-white text-sm">
               Made from Cactus fiber
             </div>
 
-            <button className="absolute bottom-4 right-4 px-4 py-2 rounded-full bg-white text-black text-sm">
-              Explore Store
-            </button>
+            <a  className="absolute bottom-4 right-4 px-4 py-2 rounded-full bg-white text-black text-sm md:text-lg"
+            href="/assets/VV_Catalog.pdf"
+                  target="_blank"
+  rel="noopener noreferrer"
+            >
+              Explore 
+            </a>
           </div>
 
           {/* Right Preview */}
@@ -77,7 +82,7 @@ export default function LeatherCarousel() {
           {/* Left Arrow */}
           <button
             onClick={prev}
-            className="absolute left-[120px] bottom-2 w-12 h-12 rounded-full bg-[#043228] text-white flex items-center justify-center"
+            className="absolute md:left-[120px] bottom-2 w-12 h-12 rounded-full bg-[#043228] text-white flex items-center justify-center"
           >
             ‹
           </button>
@@ -85,7 +90,7 @@ export default function LeatherCarousel() {
           {/* Right Arrow */}
           <button
             onClick={next}
-            className="absolute right-[120px] top-2 w-12 h-12 rounded-full bg-[#043228] text-white flex items-center justify-center"
+            className="absolute right-[10px] md:right-[120px] bottom-2 md:top-2 w-12 h-12 rounded-full bg-[#043228] text-white flex items-center justify-center"
           >
             ›
           </button>
