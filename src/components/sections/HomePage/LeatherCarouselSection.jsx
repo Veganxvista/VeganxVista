@@ -52,7 +52,7 @@ export default function LeatherCarousel() {
             />
 
             {/* Overlay Text */}
-            <div className="absolute top-4 left-4 text-white">
+            <div className="absolute top-4 left-4 text-lg text-white">
               {center.name}
             </div>
 
