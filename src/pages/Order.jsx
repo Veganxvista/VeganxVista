@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Filter, ArrowRight } from 'lucide-react';
-import QuoteModal from '../components/ui/QuoteModal';
 import { PRODUCTS, PRODUCT_CATEGORIES, getProductsByCategory } from '../data/products';
 
 const fadeUp = (delay = 0) => ({
@@ -151,7 +150,6 @@ const goToContact = () => {
         </section>
       </main>
 
-      <QuoteModal isOpen={quoteOpen} onClose={() => setQuoteOpen(false)} />
     </>
   );
 }
