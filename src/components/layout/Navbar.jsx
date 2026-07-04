@@ -7,7 +7,6 @@ import { motion, AnimatePresence } from 'framer-motion';
 const NAV_LINKS = [
   { to: '/',       label: 'Home'  },
   { to: '/about',  label: 'Our Story' },
-  { to: '/blog',   label: 'blog'  },
   { to: '/order',  label: 'Order' },
 ];
 
@@ -55,6 +54,14 @@ export default function Navbar() {
                 {label}
               </NavLink>
             ))}
+            <a
+  href="https://viganvista.blogspot.com/"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="px-5 py-2 rounded-full font-inter text-sm text-white/70 hover:text-white hover:bg-white/10"
+>
+  Blog
+</a>
           </div>
 
           {/* Mobile hamburger */}

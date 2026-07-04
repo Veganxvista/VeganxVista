@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import { Mail } from 'lucide-react';
 
 const fadeUp = (delay = 0) => ({
   initial: { opacity: 0, y: 32 },
@@ -10,22 +11,31 @@ const fadeUp = (delay = 0) => ({
 
 const FOUNDERS = [
   {
-    name:  'Anand Agarwal',
+    name: 'Anand Agarwal',
     title: 'Founder',
     image: '/assets/Hero/AnandAgrawal.jpg',
     color: '#1B3A2D',
+    description:
+      'A visionary entrepreneur with over 30 years of deep expertise in the textile industry. Proven track record of covering the entire manufacturing value chain, from yarn to final garment production. Successfully founded and exited the denim brand "Aramex". Currently leveraging three decades of manufacturing insight to pioneer sustainable material science at VeganVista Corp, transforming agricultural waste into eco-friendly leather alternatives.',
+    email: 'anand@veganvistacorp.com'
   },
   {
-    name:  'Ishita Agrawal',
-    title: 'Founder',
+    name: 'Ishita Agarwal',
+    title: 'Co-Founder',
     image: '/assets/Hero/IshitaAgrawal.jpeg',
     color: '#2F7A1E',
+    description:
+    'A visionary entrepreneur dedicated to improve the enviroment and animal welfare. With expertise in Environmental microbilogy and Biotechnology, Ishita brings a successful track records developing high end products from R & D. Her understanding in Technology and ability to intergrate in various fields, enables her to meet Industrial demands.',
+    email: 'ishita@veganvistacorp.com'
   },
   {
-    name:  '',
-    title: '',
-    image: '',
+    name: 'Abhishek Chaudhary',
+    title: 'CTO - Chief Technology Officer',
+    image: '/assets/Hero/AbhishekChaudhary.jpg',
     color: '#2F7A1E',
+    description:
+      'Building the technology infrastructure powering material innovation and digital transformation.',
+    email: 'abhishek@veganvistacorp.com'
   },
 ];
 
@@ -70,37 +80,70 @@ export default function About() {
       {/* Founder Cards */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         {FOUNDERS.map((f, i) => (
-          <motion.div
-            key={i}
-            {...fadeUp(i * 0.12)}
-            className="relative rounded-2xl overflow-hidden group"
-            style={{ aspectRatio: "3/4" }}
-          >
-            <img
-              src={f.image}
-              alt={f.name}
-              className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-            />
+  <motion.div
+    key={i}
+    {...fadeUp(i * 0.12)}
+    className="group [perspective:1000px]"
+  >
+    <div
+      className="relative rounded-2xl w-full transition-all duration-700
+      [transform-style:preserve-3d]
+      group-hover:[transform:rotateY(180deg)]"
+      style={{ aspectRatio: "3/4" }}
+    >
+      {/* FRONT SIDE */}
+      <div className="absolute inset-0 rounded-2xl overflow-hidden [backface-visibility:hidden]">
+        <img
+          src={f.image}
+          alt={f.name}
+          className="absolute inset-0 w-full h-full object-cover"
+        />
 
-            <div
-              className="absolute inset-0 -z-10"
-              style={{
-                background: `linear-gradient(135deg, ${f.color}cc, ${f.color}66)`
-              }}
-            />
+        <div
+          className="absolute inset-0 -z-10"
+          style={{
+            background: `linear-gradient(135deg, ${f.color}cc, ${f.color}66)`,
+          }}
+        />
 
-            <div className="absolute inset-0 bg-gradient-to-t from-[#0e1e15]/90 via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0e1e15]/90 via-transparent to-transparent" />
 
-            <div className="absolute bottom-0 left-0 right-0 p-5">
-              <p className="font-gilroy font-bold text-white text-lg">
-                {f.name}
-              </p>
-              <p className="font-inter text-[#7DC44E] text-xs font-medium">
-                {f.title}
-              </p>
-            </div>
-          </motion.div>
-        ))}
+        <div className="absolute bottom-0 left-0 right-0 p-5">
+          <p className="font-gilroy font-bold text-white text-lg">
+            {f.name}
+          </p>
+          <p className="font-inter text-[#7DC44E] text-xs font-medium">
+            {f.title}
+          </p>
+        </div>
+      </div>
+
+      {/* BACK SIDE */}
+      <div
+        className="absolute inset-0 rounded-2xl bg-[#1B3A2D] text-white p-6
+        flex flex-col justify-between   
+        [transform:rotateY(180deg)]
+        [backface-visibility:hidden]"
+      > 
+        <div>
+          <h3 className="font-gilroy text-xl font-bold mb-4">{f.name}</h3>
+
+        <p className="font-inter text-sm text-white/80 leading-relaxed">
+          {f.description}
+        </p>
+
+        </div>
+        <div>
+          <Mail size={13} />
+          <p className="font-inter text-sm text-white/80 leading-relaxed">
+          {f.email}
+        </p>
+        </div>
+        
+      </div>
+    </div>
+  </motion.div>
+))}
       </div>
 
       {/* Static headings under cards */}

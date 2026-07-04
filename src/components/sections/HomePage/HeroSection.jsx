@@ -59,7 +59,7 @@ export default function HeroSection() {
         animate={{ opacity: 1, x: 0 }}
       >
         <h3 className="text-[#D4FFC0] font-gilroy font-semibold leading-tight text-xl md:text-3xl lg:text-5xl">
-          leather Crafted
+          Leather Crafted
           <br />
           from{" "}
           <span className="italic font-gilroy text-[#7DC44E]">

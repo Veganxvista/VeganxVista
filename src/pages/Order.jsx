@@ -113,7 +113,7 @@ const goToContact = () => {
             <div className="grid grid-cols-1 md:grid-cols-2">
               <div className="py-16 pr-0 md:pr-12 border-b md:border-b-0 md:border-r border-[#1B3A2D]/10">
                 <h3 className="font-gilroy font-semibold text-[#1B3A2D] text-3xl mb-1">Download Our</h3>
-                <h3 className="font-gilroy font-semibold text-[#1B3A2D] text-3xl mb-5">Swatch Card</h3>
+                <h3 className="font-gilroy font-semibold text-[#1B3A2D] text-3xl mb-5">E-catalogue </h3>
                 <p className="font-gilroy text-[#00311E] text-sm leading-relaxed mb-10 max-w-xs">
                   View all colors, textures and thickness options in our full catalogue PDF.
                 </p>
@@ -130,8 +130,8 @@ const goToContact = () => {
                 </a>
               </div>
               <div className="py-16 pl-0 font-gilroy md:pl-12">
-                <h3 className=" font-semibold text-[#1B3A2D] text-3xl mb-1">Buy a Physical</h3>
-                <h3 className=" font-semibold text-[#1B3A2D] text-3xl mb-5">Swatch Card</h3>
+                <h3 className=" font-semibold text-[#1B3A2D] text-3xl mb-1">Ask for a Physical</h3>
+                <h3 className=" font-semibold text-[#1B3A2D] text-3xl mb-5">Catalogue </h3>
                 <p className=" text-[#00311E] text-sm leading-relaxed mb-10 max-w-xs">
                   Hold the real thing — A5 sample sheets in all available colors.
                 </p>

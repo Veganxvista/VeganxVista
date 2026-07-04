@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowRight, ChevronLeft, ChevronRight, Circle, Leaf } from 'lucide-react';
+import { submitContactForm } from '../../../services/contactapi';
 
 
 const FAQ_ITEMS = [
@@ -10,57 +11,61 @@ const FAQ_ITEMS = [
     a: "Yes, Veganvista is ISO certified, Vegan certified, PETA aproved, USDA Biopreffered and also USDA Organic certified\nAll these certifications makes Veganvista Bioleather more authentic and trustworthy"
   },
   {
-    q: 'In what thickness and sizes are Eori® Vegan Leather sheets available?',
+    q: 'In what thickness and sizes are Vegan Leather sheets available?',
     a: 'Veganvista Bio Leather is available in thickness ranging from 0.6mm to 1.3mm.Veganvista  sampling sheets are available in A5 sizes sheet, while commercial sheets will be available in 54 inches role in width.\nVeganvista’s Cactus leather  is offered in a wide range of colors and textures, providing endless possibilities. Additionally, we offer customization in color.'
   },
   {
-    q: 'What is the minimum order quantity?',
-    a: 'We accept orders from 50 metres for standard colors. Custom colors have a 200m MOQ.'
+    q: 'Is Veganvista breathable?',
+    a: 'Veganvista plant leather is designed to be breathable, thanks to our bio-mimicry technology which creates a material that looks, feels, and performs like leather, even at the microscopic level.'
   },
   {
-    q: 'Do you offer samples?',
-    a: 'Yes — you can order a physical A5 swatch card, or request free digital swatches.'
+    q: 'Is it possible to buy Cactus Vegan Leather for my Brand?',
+    a: 'Yes, Veganvista’s Vegan Leather is commercially available, both in sample as well as commercial quantities.To begin the purchasing process, please fill out the contact form, and we will schedule a call or video meeting to discuss your requirements in detail.'
   },
   {
     q: 'What certifications do you hold?',
-    a: 'OEKO-TEX® 100, ISO 9001:2015, REACH compliant, and PETA-approved vegan.'
-  },
-  {
-    q: 'What is the lead time?',
-    a: 'Standard colors ship within 5–7 business days. Custom orders take 3–4 weeks.'
-  },
+    a: 'USDA Biopreffered, USDA Organic, PETA-approved vegan and ISO certified, Vegan certified.'
+  }
 ];
 
 export default function ContactFAQSection() {
   const [open, setOpen] = useState(null);
-  const [form, setForm] = useState({ name: '', email: '', phnno: '', message: '' });
+  const [form, setForm] = useState({ name: '', email: '', phone: '', message: '', website: '' });
   const [sent, setSent] = useState(false);
+  const [loading, setLoading] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setSent(true);
-  };
 
-  // for form submission to WhatsApp
-  const handleformWhatsApp = () => {
-    if (!form.name.trim() || !form.email.trim()) {
-      alert("Please fill Name and Email first");
+    if (!form.name || !form.email || !form.phone) {
+      alert("Please fill Name, Email and Phone");
       return;
     }
 
-    const phone = import.meta.env.VITE_FOUNDER_CONTACT; // user number
+    try {
+      setLoading(true);
 
-    const message = `
-  Hello VeganVista,
+      await submitContactForm(form);
 
-  Name: ${form.name}
-  Email: ${form.email}
-  PhnNo: ${form.phnno}
-  Message: ${form.message || "I want to know more about your plant-based leather."}
-  Thank you!
-  `;
-    const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
-    window.open(url, "_blank");
+      setSent(true);
+
+      setForm({
+        name: "",
+        email: "",
+        phone: "",
+        message: "",
+      });
+
+      setTimeout(() => {
+        setSent(false);
+      }, 3000);
+
+    } catch (error) {
+      console.error(error);
+      alert("Submission failed");
+    } finally {
+      setLoading(false);
+    }
   };
 
   //for direct WhatsApp button
@@ -84,7 +89,7 @@ export default function ContactFAQSection() {
                 Reach Out
               </h2>
 
-              <form className="space-y-8 text-center">
+              <form className="space-y-8 text-center" onSubmit={handleSubmit}>
                 <input
                   placeholder="Name"
                   value={form.name}
@@ -108,9 +113,9 @@ export default function ContactFAQSection() {
                 <input
                   placeholder="Phone Number"
                   type="tel"
-                  value={form.phnno}
+                  value={form.phone}
                   onChange={(e) =>
-                    setForm({ ...form, phnno: e.target.value })
+                    setForm({ ...form, phone: e.target.value })
                   }
                   className="w-full bg-transparent border-b border-white/40
                          pb-3 text-white placeholder-white/70 outline-none"
@@ -124,15 +129,31 @@ export default function ContactFAQSection() {
                   className="w-full bg-transparent border-b border-white/40
                          pb-3 text-white placeholder-white/70 outline-none"
                 />
+                <input
+                  type="text"
+                  name="website"
+                  value={form.website}
+                  onChange={(e) =>
+                    setForm({ ...form, website: e.target.value })
+                  }
+                  className="hidden"
+                  tabIndex="-1"
+                  autoComplete="off"
+                />
 
                 <button
-                  type="button"
-                  onClick={handleformWhatsApp}
+                  type="submit"
+                  disabled={loading}
                   className="mt-8 px-8 py-2 rounded-full bg-[#043228]
                          text-white text-sm "
                 >
-                  Connect
+                  {loading ? "Sending..." : "Connect"}
                 </button>
+                {sent && (
+                  <p className="text-white text-sm mt-4">
+                    Message sent successfully !!!!
+                  </p>
+                )}
               </form>
             </div>
 
@@ -150,7 +171,7 @@ export default function ContactFAQSection() {
           {/* RIGHT */}
           <div className="bg-[#D8D8D8] rounded-2xl p-5">
             <h2 className="text-[#00A65A] text-3xl mb-6 font-medium">
-              F&Q
+              FAQ
             </h2>
 
             <div className="space-y-2">

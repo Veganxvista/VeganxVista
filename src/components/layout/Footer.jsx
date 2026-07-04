@@ -38,20 +38,6 @@ export default function Footer() {
                 </a>
               ))}
             </div>
-
-            {/* Google Maps embed */}
-            <div className="rounded-xl overflow-hidden border border-white/10" style={{ height: 160 }}>
-              <iframe
-    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3671.74!2d72.5793!3d23.0258!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e848aba5bd449%3A0x4fcedd11614f6516!2sNew%20Cloth%20Market%2C%20Ahmedabad!5e0!3m2!1sen!2sin!4v1700000000"
-    width="100%"
-    height="180"
-    style={{ border: 0 }}
-    allowFullScreen
-    loading="lazy"
-    referrerPolicy="no-referrer-when-downgrade"
-    title="New Cloth Market Location"
-  />
-            </div>
           </div>
 
           {/* Col 2 — Contact */}
@@ -75,6 +61,10 @@ export default function Footer() {
                   <Mail size={13} />
                   anand@veganvistacorp.com
                 </a>
+                <a href="mailto:veganvista@gmail.com" className="flex items-center gap-2 text-white/50 text-sm font-inter hover:text-[#7DC44E] transition-colors">
+                  <Mail size={13} />
+                  veganvista@gmail.com 
+                </a>
               </li>
               <li className="flex items-start gap-2 text-white/50 text-sm font-inter">
                 <MapPin size={13} className="flex-shrink-0 mt-0.5" />
@@ -90,9 +80,7 @@ export default function Footer() {
               {[
                 { label: 'Home',        to: '/'      },
                 { label: 'About',       to: '/about' },
-                { label: 'Technology',  to: '/about#technology' },
-                { label: 'Why Cactus?', to: '/about#why-cactus' },
-                { label: 'Products',    to: '/order' },
+                { label: 'Order',  to: '/order' },
               ].map(({ label, to }) => (
                 <li key={label}>
                   <Link to={to} className="font-inter text-white/50 text-sm hover:text-[#7DC44E] transition-colors flex items-center gap-1.5 group">
@@ -101,40 +89,35 @@ export default function Footer() {
                   </Link>
                 </li>
               ))}
+               <a
+  href="https://viganvista.blogspot.com/"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="font-inter text-white/50 text-sm hover:text-[#7DC44E] transition-colors flex items-center gap-1.5 group"
+>
+  <ArrowRight size={11} className="opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
+  Blog
+</a>
             </ul>
           </div>
 
           {/* Col 4 — More */}
           <div>
-            <h4 className="font-inter font-semibold text-white/90 text-sm mb-5">More</h4>
-            <ul className="space-y-2.5">
-              {[
-                { label: 'Contact Us',  to: '/contact'          },
-                { label: 'FAQ',         to: '/contact#faq'       },
-                { label: 'Swatch Card', to: '/order#swatch'      },
-                { label: 'Blogs',       to: '/blog'              },
-              ].map(({ label, to }) => (
-                <li key={label}>
-                  <Link to={to} className="font-inter text-white/50 text-sm hover:text-[#7DC44E] transition-colors flex items-center gap-1.5 group">
-                    <ArrowRight size={11} className="opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
-                    {label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
+            {/* Google Maps embed */}
+            <div className="rounded-xl overflow-hidden border border-white/10" style={{ height: 160 }}>
+              <iframe
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3671.74!2d72.5793!3d23.0258!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e848aba5bd449%3A0x4fcedd11614f6516!2sNew%20Cloth%20Market%2C%20Ahmedabad!5e0!3m2!1sen!2sin!4v1700000000"
+    width="100%"
+    height="180"
+    style={{ border: 0 }}
+    allowFullScreen
+    loading="lazy"
+    referrerPolicy="no-referrer-when-downgrade"
+    title="New Cloth Market Location"
+  />
+            </div>
           </div>
         </div>
-
-        {/* Bottom bar */}
-        {/* <div className="mt-12 pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p className="font-inter text-white/25 text-xs">
-            © {new Date().getFullYear()} VeganVista Corp Pvt Ltd. All rights reserved.
-          </p>
-          <div className="flex gap-6">
-            <Link to="/contact" className="font-inter text-white/25 text-xs hover:text-white/50 transition-colors">Privacy Policy</Link>
-            <Link to="/contact" className="font-inter text-white/25 text-xs hover:text-white/50 transition-colors">Terms of Use</Link>
-          </div>
-        </div> */}
       </div>
     </footer>
   );

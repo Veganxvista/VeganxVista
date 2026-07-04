@@ -85,7 +85,7 @@ export default function CactusInfoSection() {
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
-            className="absolute left-0 md:left-[-45px] bottom-10 w-full md:w-[1250px] bg-white rounded-[20px] shadow-xl px-30 py-8 "
+            className="absolute left-[-20px] md:left-[-45px] bottom-10 w-[100vw] md:w-[1250px] bg-white rounded-[20px] shadow-xl px-30 py-8 "
           >
             <div className="grid grid-cols-2 md:grid-cols-4 md:gap-8">
               {stats.map((item, idx) => (
