@@ -17,7 +17,7 @@ export default function CertificateSection() {
     rounded-b-[40px] "
       aria-label="Certifications">
       <div className="max-w-8xl mx-auto px-5">
-        <div className="flex flex-wrap items-center justify-center gap-2 md:gap-10 lg:gap-15">
+        <div className="flex flex-wrap items-center justify-center md:gap-2">
           {CERTS.map(({ label, path }) => (
             <div key={label} className="flex items-center">
               <div className=" w-20 h-20 md:w-40 md:h-35 border-2  bg-white flex items-center justify-center p-2 ">
