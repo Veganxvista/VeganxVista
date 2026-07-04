@@ -121,6 +121,14 @@ export default function Navbar() {
                       </NavLink>
                     </motion.li>
                   ))}
+                  <a
+  href="https://viganvista.blogspot.com/"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="px-5 py-2 rounded-full font-inter text-sm text-white/70 hover:text-white hover:bg-white/10"
+>
+  Blog
+</a>
                 </ul>
               </nav>
               <div className="px-6 pb-8 border-t border-white/10 pt-6">
