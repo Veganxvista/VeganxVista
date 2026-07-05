@@ -41,7 +41,7 @@ export default function Footer() {
           </div>
 
           {/* Col 2 — Contact */}
-          <div className=" flex flex-col ">
+          <div className=" flex-col hidden md:flex">
             <h4 className="font-inter font-semibold text-white/90 text-sm md:mb-5">Contact</h4>
             <ul className="space-y-3">
               <li>
@@ -101,7 +101,38 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Col 4 — More */}
+          <div className=" flex-col flex md:hidden">
+            <h4 className="font-inter font-semibold text-white/90 text-sm md:mb-5">Contact</h4>
+            <ul className="space-y-3">
+              <li>
+                <a href="tel:+919824006823" className="flex items-center gap-2 text-white/50 text-sm font-inter hover:text-[#7DC44E] transition-colors">
+                  <Phone size={13} />
+                  +91 98240 06823
+                </a>
+              </li>
+              <li>
+                <a href="tel:+919824241407" className="flex items-center gap-2 text-white/50 text-sm font-inter hover:text-[#7DC44E] transition-colors">
+                  <Phone size={13} />
+                  +91 98242 41407
+                </a>
+              </li>
+              <li>
+                <a href="mailto:anand@veganvistacorp.com" className="flex items-center gap-2 text-white/50 text-sm font-inter hover:text-[#7DC44E] transition-colors">
+                  <Mail size={13} />
+                  anand@veganvistacorp.com
+                </a>
+                <a href="mailto:veganvista@gmail.com" className="flex items-center gap-2 text-white/50 text-sm font-inter hover:text-[#7DC44E] transition-colors">
+                  <Mail size={13} />
+                  veganvista@gmail.com 
+                </a>
+              </li>
+              <li className="flex items-start gap-2 text-white/50 text-sm font-inter">
+                <MapPin size={13} className="flex-shrink-0 mt-0.5" />
+                <span>47, New Cloth Market,<br />Ahmedabad – 380002</span>
+              </li>
+            </ul>
+          </div>
+
           <div>
             {/* Google Maps embed */}
             <div className="rounded-xl overflow-hidden border border-white/10" style={{ height: 160 }}>

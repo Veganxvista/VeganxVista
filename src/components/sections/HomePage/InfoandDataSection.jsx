@@ -71,13 +71,9 @@ export default function CactusInfoSection() {
           </div>
 
           {/* Content */}
-          <div className="relative md:max-w-2xl md:ml-80 mt-40 md:mt-0 md:pt-10  ">
-            <p className="text-[#1B3A2D] text-xl leading-relaxed font-medium font-gilroy">
-              To decouple the material economy from animal agriculture and
-              petrochemicals. We exist to prove that the most durable and
-              beautiful materials on earth can be grown, not slaughtered or
-              drilled. To craft premium, affordable sustainable plant-based
-              vegan leather.
+          <div className="relative md:max-w-2xl md:ml-40 mt-[120px] md:mt-0 md:pt-10  ">
+            <p className="text-[#1B3A2D] text-xl  md:leading-relaxed font-medium font-gilroy">
+              To decouple the materials industry from animal agriculture and fossil fuel–based materials. We exist to prove that the most durable and beautiful materials on earth can be grown, not slaughtered or drilled. We craft premium, affordable, sustainable plant-based vegan leather.
             </p>
           </div>
 

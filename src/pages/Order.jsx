@@ -69,7 +69,7 @@ const goToContact = () => {
   </div>
 
   {/* Floating Quote Card */}
-  <div className="absolute bottom-24 left-1/2 -translate-x-1/2 z-30 w-full max-w-7xl px-5">
+  <div className="absolute bottom-10  md:bottom-24 left-1/2 -translate-x-1/2 z-30 w-full max-w-7xl px-5">
     <div
       className="
         bg-[#C9FFAF]

@@ -5,13 +5,13 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 
 const NAV_LINKS = [
-  { to: '/',       label: 'Home'  },
-  { to: '/about',  label: 'Our Story' },
-  { to: '/order',  label: 'Order' },
+  { to: '/', label: 'Home' },
+  { to: '/about', label: 'Our Story' },
+  { to: '/order', label: 'Order' },
 ];
 
 export default function Navbar() {
-  const [scrolled,   setScrolled]   = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const location = useLocation();
 
@@ -46,22 +46,22 @@ export default function Navbar() {
                 className={({ isActive }) =>
                   `px-5 py-2 rounded-full font-inter text-sm transition-all duration-200
                    ${isActive
-                     ? 'bg-white/20 text-white font-medium'
-                     : 'text-white/70 hover:text-white hover:bg-white/10'
-                   }`
+                    ? 'bg-white/20 text-white font-medium'
+                    : 'text-white/70 hover:text-white hover:bg-white/10'
+                  }`
                 }
               >
                 {label}
               </NavLink>
             ))}
             <a
-  href="https://viganvista.blogspot.com/"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="px-5 py-2 rounded-full font-inter text-sm text-white/70 hover:text-white hover:bg-white/10"
->
-  Blog
-</a>
+              href="https://viganvista.blogspot.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-5 py-2 rounded-full font-inter text-sm text-white/70 hover:text-white hover:bg-white/10"
+            >
+              Blog
+            </a>
           </div>
 
           {/* Mobile hamburger */}
@@ -99,8 +99,8 @@ export default function Navbar() {
             >
               <div className="flex items-center justify-between px-6 py-5 border-b border-white/10">
                 <div className="leading-none">
-              <img src="/assets/Logo/veganvista_logo2.png" alt="VeganVista" className="h-10 w-11 absolute top-2 left-0" />
-            </div>
+                  <img src="/assets/Logo/veganvista_logo2.png" alt="VeganVista" className="h-10 w-11 absolute top-2 left-0" />
+                </div>
                 <button onClick={() => setMobileOpen(false)} className="text-white/60 hover:text-white" aria-label="Close">
                   <X size={20} />
                 </button>
@@ -122,18 +122,16 @@ export default function Navbar() {
                     </motion.li>
                   ))}
                   <a
-  href="https://viganvista.blogspot.com/"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="px-5 py-2 rounded-full font-inter text-sm text-white/70 hover:text-white hover:bg-white/10"
->
-  Blog
-</a>
+                    href="https://viganvista.blogspot.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block px-4 py-3 rounded-full font-inter text-sm text-white/70 hover:text-white hover:bg-white/10"
+                  >
+                    Blog
+                  </a>
                 </ul>
               </nav>
-              <div className="px-6 pb-8 border-t border-white/10 pt-6">
-                <p className="text-white/30 text-xs font-inter text-center">+91 98240 06823</p>
-              </div>
+
             </motion.div>
           </>
         )}
