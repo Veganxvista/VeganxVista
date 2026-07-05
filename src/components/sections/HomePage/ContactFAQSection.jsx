@@ -7,24 +7,20 @@ import { submitContactForm } from '../../../services/contactapi';
 
 const FAQ_ITEMS = [
   {
-    q: 'Is Veganvista Certified ?',
-    a: "Yes, Veganvista is ISO certified, Vegan certified, PETA aproved, USDA Biopreffered and also USDA Organic certified\nAll these certifications makes Veganvista Bioleather more authentic and trustworthy"
+    q: 'Is it possible to buy Cactus Vegan Leather for my Brand?',
+    a: "Yes, Veganvista\'s Vegan Leather is commercially available, both in sample as well as commercial quantities.To begin the purchasing process, please fill out the contact form, and we will schedule a call or video meeting to discuss your requirements in detail."
   },
   {
-    q: 'In what thickness and sizes are Vegan Leather sheets available?',
-    a: 'Veganvista Bio Leather is available in thickness ranging from 0.6mm to 1.3mm.Veganvista  sampling sheets are available in A5 sizes sheet, while commercial sheets will be available in 54 inches role in width.\nVeganvista’s Cactus leather  is offered in a wide range of colors and textures, providing endless possibilities. Additionally, we offer customization in color.'
+    q: 'In what thickness and size is Vegan Leather available?',
+    a: 'Veganvista Bio Leather is available in thickness ranging from 0.6mm to 1.3mm. Veganvista\'s cactus comes in 54 inches role in width. Veganvista\'s Cactus leather is offered in a wide range of colors and textures, providing endless possibilities. Additionally, we offer customization in color.'
   },
   {
-    q: 'Is Veganvista breathable?',
+    q: 'Is Veganvista\'s cactus leather breathable?',
     a: 'Veganvista plant leather is designed to be breathable, thanks to our bio-mimicry technology which creates a material that looks, feels, and performs like leather, even at the microscopic level.'
   },
   {
-    q: 'Is it possible to buy Cactus Vegan Leather for my Brand?',
-    a: 'Yes, Veganvista’s Vegan Leather is commercially available, both in sample as well as commercial quantities.To begin the purchasing process, please fill out the contact form, and we will schedule a call or video meeting to discuss your requirements in detail.'
-  },
-  {
-    q: 'What certifications do you hold?',
-    a: 'USDA Biopreffered, USDA Organic, PETA-approved vegan and ISO certified, Vegan certified.'
+    q: 'Is Veganvista Certified ?',
+    a: 'Yes, Veganvista is ISO certified, Vegan certified, PETA aproved, USDA Biopreffered and also USDA Organic certified. All these certifications makes Veganvista\'s Bioleather more authentic and trustworthy.'
   }
 ];
 

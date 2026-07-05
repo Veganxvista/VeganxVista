@@ -30,7 +30,7 @@ const FOUNDERS = [
       `A visionary entrepreneur dedicated to improve the enviroment and animal welfare. With expertise in Environmental microbilogy and Biotechnology, Ishita brings a successful track records developing high end products from R & D. 
       
       Her understanding in Technology and ability to intergrate in various fields, enables her to meet Industrial demands.`,
-    email: 'ishita@veganvistacorp.com'
+    email: 'ishitaagarwal2100@gmail.com'
   },
   {
     name: 'Abhishek Chaudhary',
@@ -41,11 +41,10 @@ const FOUNDERS = [
 Also have worked towards helping businesses and individuals achieve their business cum financial goals. Hands on industry knowledge and a result driven approach to deliver impactful solutions.
 
 I am committed to staying ahead of industry trends, continuously refining my skill set and embracing innovative technologies to enhance business decision making.
-
 Co Founder
 Phoenix Business Solutions
 Myjini Management Pvt Ltd`,
-  email: 'abhishek@veganvistacorp.com'
+  email: 'abhishek@abhishekca.com'
   },
 ];
 
@@ -138,14 +137,14 @@ export default function About() {
                       <div>
                         <h3 className="font-gilroy text-xl font-bold mb-4">{f.name}</h3>
 
-                        <p className="font-inter text-sm text-white/80 whitespace-pre-line leading-relaxed">
+                        <p className="font-inter text-sm md:text-xs text-white/80 whitespace-pre-line leading-relaxed">
                           {f.description}
                         </p>
 
                       </div>
-                      <div>
+                      <div className="flex items-center gap-2 mt-4">
                         <Mail size={13} />
-                        <p className="font-inter text-sm text-white/80 leading-relaxed">
+                        <p className="font-inter  text-sm text-white/80 leading-relaxed">
                           {f.email}
                         </p>
                       </div>
