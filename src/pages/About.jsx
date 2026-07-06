@@ -34,7 +34,7 @@ const FOUNDERS = [
   },
   {
     name: 'Abhishek Chaudhary',
-    title: 'CTO - Chief Technology Officer',
+    title: 'CFO - Chief Financial Officer',
     image: '/assets/Hero/AbhishekChaudhary.jpg',
     color: '#2F7A1E',
     description:`A Chartered Accountant with over 2 decades of experience in the field of Financial Analysis, Corporate Finance, Taxation, Financial Planning.
