@@ -73,7 +73,7 @@ export default function HeroSection() {
       </motion.div>
 
       {/* Main Content */}
-      <div className="relative bottom-[-320px] md:left-20 md:bottom-[-400px] z-20 max-w-7xl mx-auto px-6  flex flex-col justify-end pb-16">
+      <div className="relative bottom-[-280px] md:left-20 md:bottom-[-400px] z-20 max-w-7xl mx-auto px-6  flex flex-col justify-end pb-16">
         {/* Heading */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
