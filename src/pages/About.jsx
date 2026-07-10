@@ -30,7 +30,7 @@ const FOUNDERS = [
       `A visionary entrepreneur dedicated to improve the enviroment and animal welfare. With expertise in Environmental microbilogy and Biotechnology, Ishita brings a successful track records developing high end products from R & D. 
       
       Her understanding in Technology and ability to intergrate in various fields, enables her to meet Industrial demands.`,
-    email: 'ishitaagarwal2100@gmail.com'
+    email: 'ishita@veganvistacorp.com'
   },
   {
     name: 'Abhishek Chaudhary',
